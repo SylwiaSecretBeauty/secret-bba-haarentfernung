@@ -381,11 +381,31 @@ section {
     .logo-img {
         height: 36px;
     }
+    
+    /* NEU: Package Rows für Mobile */
+    .package-row {
+        flex-direction: column;
+        gap: 12px;
+        max-width: 100%;
+    }
+    
+    .package-row span {
+        text-align: center;
+    }
+    
+    .package-row .btn {
+        width: 100%;
+    }
 }
 
 @media (max-width: 480px) {
     .hero h1 {
         font-size: 28px;
+    }
+    
+    .btn {
+        padding: 14px 28px;
+        font-size: 14px;
     }
 }
 
@@ -400,3 +420,4 @@ section {
     line-height: 1.2;
     font-family: 'Inter', sans-serif;
 }
+
