@@ -1,3 +1,147 @@
+Ich hab im hearo sub folgenden code :
+
+  <p class="hero-sub">
+            Paket 1: Beine & Achseln <br>
+            Paket 2: Bikini & Achseln <br>
+            Paket 3: Beine & Bauch
+        </p>
+
+ich möchte, dass neben jeder Textzeile ein buchungsbutton intergiert ist. Mein code für den button:
+
+<a href="https://wa.me/436766801228?text=Hallo%20liebes%20SECRET%20Beauty%20Body%20Art%21%0AIch%20wuerde%20gerne%20einen%20der%20limitierten%20Plaetze%20fuer%20die%20Haarentfernung%20im%20Wert%20von%2099%E2%82%AC%20buchen.%0ALiebe%20Gruesse%21" class="btn btn-primary" target="_blank">
+            Jetzt ab 20€ sparen!
+        </a>
+
+wie intergiere ich das?
+18:09
+
+Du kannst die Buttons direkt neben den Text integrieren. Hier sind ein paar Möglichkeiten:
+
+Option 1: Jede Zeile in ein eigenes div mit Flexbox
+html
+
+<div class="hero-sub">
+    <div class="package-row">
+        <span>Paket 1: Beine & Achseln</span>
+        <a href="https://wa.me/436766801228?text=Hallo%20liebes%20SECRET%20Beauty%20Body%20Art%21%0AIch%20wuerde%20gerne%20Paket%201%20buchen.%0ALiebe%20Gruesse%21" class="btn btn-primary" target="_blank">
+            Jetzt buchen
+        </a>
+    </div>
+    <div class="package-row">
+        <span>Paket 2: Bikini & Achseln</span>
+        <a href="https://wa.me/436766801228?text=Hallo%20liebes%20SECRET%20Beauty%20Body%20Art%21%0AIch%20wuerde%20gerne%20Paket%202%20buchen.%0ALiebe%20Gruesse%21" class="btn btn-primary" target="_blank">
+            Jetzt buchen
+        </a>
+    </div>
+    <div class="package-row">
+        <span>Paket 3: Beine & Bauch</span>
+        <a href="https://wa.me/436766801228?text=Hallo%20liebes%20SECRET%20Beauty%20Body%20Art%21%0AIch%20wuerde%20gerne%20Paket%203%20buchen.%0ALiebe%20Gruesse%21" class="btn btn-primary" target="_blank">
+            Jetzt buchen
+        </a>
+    </div>
+</div>
+
+CSS dazu:
+css
+
+.package-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    gap: 20px;
+}
+
+.package-row span {
+    flex: 1;
+}
+
+.package-row .btn {
+    white-space: nowrap;
+}
+
+Option 2: Mit CSS Grid (für gleichmäßige Spalten)
+css
+
+.hero-sub {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 20px 30px;
+    align-items: center;
+}
+
+Dann dein HTML ohne <br>:
+html
+
+<div class="hero-sub">
+    <span>Paket 1: Beine & Achseln</span>
+    <a href="..." class="btn btn-primary" target="_blank">Jetzt buchen</a>
+    
+    <span>Paket 2: Bikini & Achseln</span>
+    <a href="..." class="btn btn-primary" target="_blank">Jetzt buchen</a>
+    
+    <span>Paket 3: Beine & Bauch</span>
+    <a href="..." class="btn btn-primary" target="_blank">Jetzt buchen</a>
+</div>
+
+Ich würde Option 1 empfehlen, da sie übersichtlicher ist und du für jedes Paket auch einen individuellen WhatsApp-Text verwenden kannst (z.B. "Ich würde gerne Paket 1 buchen" statt dem generischen Text).
+
+ich habe die option 1 genommen. ich hätte gerne einen größeren abstand. noch eine zeile mehr
+18:14
+
+Ändere einfach den margin-bottom Wert im CSS:
+css
+
+.package-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;  /* von 15px auf 30px erhöht */
+    gap: 20px;
+}
+
+Wenn du noch mehr Abstand möchtest, kannst du den Wert weiter erhöhen, z.B. auf 40px oder 50px.
+
+das ist meine css datei. bitte füge das dazu
+18:16
+
+Hier ist der Code, den du zu deiner CSS-Datei hinzufügen musst. Füge ihn am besten direkt nach dem .hero-sub Abschnitt ein:
+css
+
+/* =========================
+   PACKAGE ROWS
+========================= */
+.package-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    gap: 20px;
+}
+
+.package-row span {
+    flex: 1;
+    text-align: left;
+}
+
+.package-row .btn {
+    white-space: nowrap;
+}
+
+Wenn du den Abstand zwischen den Zeilen noch größer haben möchtest, ändere einfach margin-bottom: 30px; auf einen höheren Wert wie 40px oder 50px.
+
+poste die gesamte aktualisierte datei
+18:17
+Fertig
+
+Hier ist deine aktualisierte CSS-Datei mit den neuen Styles für die Package-Rows.
+Styles
+Code · CSS 
+Möchtest du benachrichtigt werden, wenn Claude antwortet?
+
+
+Claude ist eine KI und kann Fehler machen. Bitte überprüfe die Antworten.
+Styles · CSS
 /* =========================
    ROOT / VARIABLEN
 ========================= */
@@ -128,7 +272,27 @@ a {
 .hero-sub {
     font-size: 16px;
     color: var(--text-gray);
-    margin-top: 10px;
+    margin-top: 10px
+}
+
+/* =========================
+   PACKAGE ROWS
+========================= */
+.package-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    gap: 20px;
+}
+
+.package-row span {
+    flex: 1;
+    text-align: left;
+}
+
+.package-row .btn {
+    white-space: nowrap;
 }
 
 /* HERO MEDIA */
@@ -368,3 +532,4 @@ section {
     line-height: 1.2;
     font-family: 'Inter', sans-serif;
 }
+
