@@ -258,7 +258,6 @@ section {
     border-radius: 14px;
     margin: 0 auto;
     display: block;
-    object-fit: cover;
 }
 
 /* =========================
@@ -383,11 +382,6 @@ section {
 
     .split {
         flex-direction: column;
-    }
-
-    .split-image {
-        max-width: 100%;
-        width: 100%;
     }
 
     .logo-img {
