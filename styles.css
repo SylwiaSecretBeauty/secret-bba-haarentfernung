@@ -25,6 +25,11 @@
     padding: 0;
 }
 
+html,
+body {
+    overflow-x: hidden;
+}
+
 body {
     font-family: var(--font-main);
     color: var(--text-dark);
@@ -247,8 +252,9 @@ section {
 }
 
 .split-image {
-    flex: 1 1 300px;
+    width: 100%;
     max-width: 420px;
+    height: auto;
     border-radius: 14px;
     margin: 0 auto;
     display: block;
@@ -382,7 +388,6 @@ section {
         height: 36px;
     }
 
-    /* KORRIGIERT: Package Rows für Mobile */
     .package-row {
         flex-direction: column;
         gap: 12px;
