@@ -128,7 +128,10 @@ a {
 .hero-sub {
     font-size: 16px;
     color: var(--text-gray);
-    margin-top: 10px
+    margin-top: 10px;
+    max-width: 600px;  /* Neu */
+    margin-left: auto;  /* Neu */
+    margin-right: auto; /* Neu */
 }
 
 /* =========================
@@ -388,4 +391,5 @@ section {
     line-height: 1.2;
     font-family: 'Inter', sans-serif;
 }
+
 
