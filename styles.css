@@ -125,6 +125,13 @@ a {
     font-weight: 400;
 }
 
+.hero-subtitle {
+    font-size: 16px;
+    color: var(--text-gray);
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
 .hero-sub {
     font-size: 16px;
     color: var(--text-gray);
@@ -132,12 +139,6 @@ a {
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-.hero-subtitle {
-    font-size: 16px;
-    color: var(--text-gray);
-    margin-top: 10px;
-    margin-bottom: 20px;
 }
 
 /* =========================
@@ -149,7 +150,7 @@ a {
     align-items: center;
     margin-bottom: 30px;
     gap: 20px;
-    max-width: 500px;
+    max-width: 600px;
     width: 100%;
 }
 
@@ -399,4 +400,3 @@ section {
     line-height: 1.2;
     font-family: 'Inter', sans-serif;
 }
-
