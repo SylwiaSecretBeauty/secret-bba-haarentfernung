@@ -105,7 +105,7 @@ a {
     text-transform: uppercase;
     color: var(--primary-dark);
     margin-bottom: 16px;
-    display: inline-block;
+    display: center;
 }
 
 .hero h1 {
@@ -388,3 +388,4 @@ section {
     line-height: 1.2;
     font-family: 'Inter', sans-serif;
 }
+
